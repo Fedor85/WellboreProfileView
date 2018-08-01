@@ -1,0 +1,32 @@
+﻿<local:BaseRegionNameControl x:Class="WellboreProfileView.Views.MainPageButtonsPanelControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WellboreProfileView.Views"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:behaviors="clr-namespace:WellboreProfileView.Behaviors"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" >
+    <i:Interaction.Behaviors>
+        <behaviors:RegionNameBehavior RegionName ="{Binding RegionName, Mode=TwoWay}"/>
+    </i:Interaction.Behaviors>
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+        <dx:SimpleButton Name="RefreshButton" Height="25" Width="Auto"  HorizontalAlignment="Left"  VerticalAlignment="Top"
+                         Content="Обновить" Command="{Binding RefreshPageDCommand}" Glyph="{dx:DXImage Image=Refresh_32x32.png}"/>
+        <Border Style="{DynamicResource SeparatorStyle}" Margin="5,0,5,0" Width="2" Height="25"/>
+        <dx:SimpleButton Name="SaveButton" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="Auto"
+                         Content="Сохранить" Command="{Binding SavePageDCommand}" Glyph="{dx:DXImage Image=Save_16x16.png}"/>
+        <Border Style="{DynamicResource SeparatorStyle}" Margin="5,0,5,0" Width="2" Height="25"/>
+        <dx:SimpleButton Name="ImpotrButton" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="Auto"
+                         Content="Импорт" Command="{Binding ImportPageDCommand}" Glyph="{dx:DXImage Image=UnmergeCells_32x32.png}"/>
+        <Border Style="{DynamicResource SeparatorStyle}" Margin="5,0,5,0" Width="2" Height="25"/>
+        <ComboBox Width="180" ItemsSource="{Binding DisplayPageRegions}" DisplayMemberPath="Name" SelectedItem="{Binding CurrentDisplayPageRegion , Mode=TwoWay}"/>
+        <Border Style="{DynamicResource SeparatorStyle}" Margin="5,0,5,0" Width="2" Height="25"/>
+        <dx:SimpleButton Name="UpDownButton" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="Auto" Command="{Binding UpDownMultiTableDCommand}"
+                         Glyph="pack://application:,,,/WellboreProfileView;component/Themes/UpDown.png"/>
+    </StackPanel>
+</local:BaseRegionNameControl>

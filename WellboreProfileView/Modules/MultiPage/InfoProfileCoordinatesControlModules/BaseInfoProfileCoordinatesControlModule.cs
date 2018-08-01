@@ -1,0 +1,17 @@
+﻿using Microsoft.Practices.Unity;
+using WellboreProfileView.Interfaces;
+
+namespace WellboreProfileView.Modules
+{
+    public abstract class BaseInfoProfileCoordinatesControlModule : BaseModule
+    {
+        protected virtual string RegionName { get; }
+
+        public override void Initialize()
+        {
+            object view = UnityContainer.Resolve<IInfoProfileCoordinatesControl>();
+            ((IRegionUserControl)view).RegionName = RegionName;
+            RegionManager.Regions[RegionName].Add(view, ControlNames.InfoProfileCoordinatesControl);
+        }
+    }
+}

@@ -1,0 +1,13 @@
+﻿<ResourceDictionary
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WellboreProfileView"
+        xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <Style x:Key="SeparatorStyle" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="#f9da7a"/>
+        <Setter Property="Background" Value="#f9da7a"/>
+    </Style>
+    <SolidColorBrush x:Key="MainColor" Color="#ffffe2"/>
+    <SolidColorBrush x:Key="MainLightColor" Color="#fcfcf4"/>
+</ResourceDictionary>

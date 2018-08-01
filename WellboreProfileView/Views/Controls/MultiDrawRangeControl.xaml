@@ -1,0 +1,38 @@
+﻿<local:BaseRegionNameControl x:Class="WellboreProfileView.Views.MultiDrawRangeControl"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                         xmlns:local="clr-namespace:WellboreProfileView.Views"
+                         xmlns:dz="http://schemas.devzest.com/presentation"
+                         xmlns:regions="http://prismlibrary.com/"
+                         xmlns:mainNamespace="clr-namespace:WellboreProfileView"
+                         xmlns:prism="http://prismlibrary.com/"
+                         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                         xmlns:behaviors="clr-namespace:WellboreProfileView.Behaviors"
+                         prism:ViewModelLocator.AutoWireViewModel="True"
+                         mc:Ignorable="d" 
+                         d:DesignHeight="300" d:DesignWidth="300">
+    <i:Interaction.Behaviors>
+        <behaviors:RegionNameBehavior RegionName ="{Binding RegionName, Mode=TwoWay}"/>
+    </i:Interaction.Behaviors>
+    <dz:SplitContainer  Orientation="Horizontal" Child1MinSize="100" Child2MinSize="100">
+        <dz:SplitContainer.Child1>
+            <ContentControl regions:RegionManager.RegionName="{x:Static mainNamespace:RegionNames.LeftMultiDrawRangeRegion}"/>
+        </dz:SplitContainer.Child1>
+        <dz:SplitContainer.Child2>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width = "3" />
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Style="{DynamicResource SeparatorStyle}"  Width="Auto" Height="Auto"/>
+                <ContentControl Grid.Column="1" regions:RegionManager.RegionName="{x:Static mainNamespace:RegionNames.RightMultiDrawRangeRegion}"/>
+            </Grid>
+
+        </dz:SplitContainer.Child2>
+    </dz:SplitContainer>
+</local:BaseRegionNameControl>
+
+
+

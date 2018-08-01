@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="WellboreProfileView.Views.AskDialogControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:behaviors="clr-namespace:WellboreProfileView.Behaviors"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d"
+             Height="Auto" MinHeight="100" Width="300" MinWidth="300"  MaxWidth ="300" Background="{DynamicResource MainColor}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <i:Interaction.Behaviors>
+        <behaviors:WindowBehavior ParentWindow="{Binding ParentWindow, Mode=TwoWay}" />
+    </i:Interaction.Behaviors>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "*" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="{Binding Message, Mode=TwoWay}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5, 5, 5, 5"/>
+        <dxlc:FlowLayoutControl Grid.Row="1" Orientation="Horizontal" MaximizedElementPosition="Bottom" HorizontalAlignment="Right">
+            <dx:SimpleButton Name="OkButton" Height="20" Width="60"  Content="Да" Command="{Binding OkDCommand}"/>
+            <Border Style="{DynamicResource SeparatorStyle}" Margin="5,0,5,-20" Width="2"/>
+            <dx:SimpleButton Name="CanselButton" Height="20"  Width="60" Content="Нет" Command="{Binding CanselDCommand}"/>
+        </dxlc:FlowLayoutControl>
+    </Grid>
+</UserControl>
+
+
+
