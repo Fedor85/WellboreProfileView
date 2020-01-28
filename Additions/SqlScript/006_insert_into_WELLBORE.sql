@@ -1,19 +1,19 @@
 INSERT INTO WELLBORE (WELL_ID, NAME)
-     VALUES (1, 'основной');
+     VALUES (1, 'п”ќѕ„ќѕ ');
 INSERT INTO WELLBORE ( WELL_ID, NAME)
-     VALUES (2, 'основной');
+     VALUES (2, 'п”ќѕ„ќѕ ');
 INSERT INTO WELLBORE (WELL_ID, NAME)
-     VALUES (3, 'основной');
+     VALUES (3, 'п”ќѕ„ќѕ ');
 INSERT INTO WELLBORE (WELL_ID, NAME)
-     VALUES (4, 'основной');
+     VALUES (4, 'п”ќѕ„ќѕ ');
 INSERT INTO WELLBORE (WELL_ID, NAME)
      VALUES (4, 's2');
 INSERT INTO WELLBORE (WELL_ID, NAME)
-     VALUES (5, 'основной');
+     VALUES (5, 'п”ќѕ„ќѕ ');
 INSERT INTO WELLBORE (WELL_ID, NAME)
-     VALUES (6, 'основной');
+     VALUES (6, 'п”ќѕ„ќѕ ');
 INSERT INTO WELLBORE (WELL_ID, NAME)
-     VALUES (7, 'основной');
+     VALUES (7, 'п”ќѕ„ќѕ ');
      INSERT INTO WELLBORE (WELL_ID, NAME)
      VALUES (7, 's2');
      
